@@ -3,9 +3,9 @@
 #
 # archive_whisper_store.py: Backup Whisper Store to a Gzipped Tar Archive.
 #
-# Author: Lior Goikhburg <goikhburg at gmail.com >
+# Author: Lior Goikhburg <goikhburg at gmail.com>
 #
-# Set the WHISPER_LOCK_WRITES = True in carbon.conf for consistent backups
+# Set the 'WHISPER_LOCK_WRITES = True' parameter in carbon.conf for consistent backups
 
 import argparse
 import fcntl
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog=PROGRAM_NAME,
         description='Backup Whisper Store to a Gzipped Tar Archive.',
-        epilog="Example: %(prog)s -v -s /var/lib/graphite/whisper -t /storage/backup/whisper.tar.gz"
+        epilog="Example: %(prog)s -v -w /var/lib/graphite/whisper -t /storage/backup/whisper.tar.gz"
     )
     parser.add_argument('-w', '--whisper-dir', type=str, required=True, help='Whisper Store Directory')
     parser.add_argument('-t', '--tar-file', type=str, required=True, help='Destination Tar File')
